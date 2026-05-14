@@ -79,7 +79,10 @@ function set_userinfo_data($data)
             'postal_code' => $decoded_data['regadd']['postal']['value'] ?? '',
             'floor_unit_no' =>  (isset($decoded_data['regadd']['floor']['value'], $decoded_data['regadd']['unit']['value']) &&
                         preg_match('/^\d{1,2}$/', $decoded_data['regadd']['floor']['value'])
-                        ? '#' . str_pad($decoded_data['regadd']['floor']['value'], 2, '0', STR_PAD_LEFT) . '-' . $decoded_data['regadd']['unit']['value'] . ' '
+                        ? '#' .
+                            str_pad($decoded_data['regadd']['floor']['value'], 2, '0', STR_PAD_LEFT) .
+                            '-' .
+                            str_pad($decoded_data['regadd']['unit']['value'], 2, '0', STR_PAD_LEFT)
                         : ''
                     ),
         ];
