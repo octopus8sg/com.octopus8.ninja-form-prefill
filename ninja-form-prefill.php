@@ -113,7 +113,7 @@ function singpass_button_pressed()
                 'uinfin' => $singpass_userinfo['uinfin'],
                 // 'date_of_birth' => $singpass_userinfo['date_of_birth'],
                 'date_of_birth' => (!empty($singpass_userinfo['date_of_birth']) && DateTime::createFromFormat('Y-m-d', $singpass_userinfo['date_of_birth']))
-                    ? DateTime::createFromFormat('Y-m-d', $singpass_userinfo['date_of_birth'])->format('d-m-Y')
+                    ? DateTime::createFromFormat('Y-m-d', $singpass_userinfo['date_of_birth'])->format('d/m/Y')
                     : '',
                 'email' => $singpass_userinfo['email'],
                 'mobile_no' => $singpass_userinfo['mobile_no'],
